@@ -1,0 +1,33 @@
+
+CREATE DATABASE exelcred
+    WITH 
+    OWNER = postgres
+    ENCODING = 'UTF8'
+    LC_COLLATE = 'Spanish_Colombia.1252'
+    LC_CTYPE = 'Spanish_Colombia.1252'
+    TABLESPACE = pg_default
+    CONNECTION LIMIT = -1;
+
+
+-- Table: public.tabla_e
+
+-- DROP TABLE IF EXISTS public.tabla_e;
+
+CREATE TABLE IF NOT EXISTS public.tabla_e
+(
+    "Nombre_campo" text COLLATE pg_catalog."default",
+    "Tipo_dato" text COLLATE pg_catalog."default"
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.tabla_e
+    OWNER to postgres;
+-- Index: ix_tabla_e_Nombre_campo
+
+-- DROP INDEX IF EXISTS public."ix_tabla_e_Nombre_campo";
+
+CREATE INDEX IF NOT EXISTS "ix_tabla_e_Nombre_campo"
+    ON public.tabla_e USING btree
+    ("Nombre_campo" COLLATE pg_catalog."default" ASC NULLS LAST)
+    TABLESPACE pg_default;
